@@ -20,9 +20,9 @@
     permanent: yes
     state: enabled
 
-- name: Configure firewalld ports for SunCavanaugh app
+- name: Configure firewalld ports
   ansible.posix.firewalld:
-    port: "{{ host_port }}/tcp"
+    port: "80/tcp"
     permanent: true
     state: enabled
     zone: "public"
