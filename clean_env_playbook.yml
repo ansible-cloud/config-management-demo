@@ -1,0 +1,10 @@
+---
+- name: Playbook that installs and deploys SunCavanaugh app
+  hosts: all
+  collections:
+    - containers.podman
+    - ansible.posix
+  tasks:
+    - ansible.builtin.include_role:
+        name: wave.config_management.rhel
+        tasks_from: 30_clean_env.yml

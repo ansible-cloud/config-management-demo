@@ -1,0 +1,14 @@
+---
+- name: Uniinstall packages required for SunCavanaugh
+  ansible.builtin.package:
+    name:
+      - podman
+      - firewalld
+    state: absent
+  become: true
+
+- name: Uninstall firewalld service
+  ansible.builtin.service:
+    name: firewalld
+    state: absent
+  become: true
