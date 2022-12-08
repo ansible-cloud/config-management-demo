@@ -3,7 +3,7 @@
   containers.podman.podman_container:
     name: colors
     image: quay.io/acme_corp/eda-app:suncavanaugh
-    state: started
+    state: present
     recreate: true
     ports:
         - "{{ host_port }}:{{ container_port }}"
