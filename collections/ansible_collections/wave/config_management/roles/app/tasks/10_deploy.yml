@@ -4,6 +4,10 @@
     name: colors
     state: absent
 
+- name: Pause for 5 seconds to apply fw rules
+  ansible.builtin.pause:
+    seconds: 5
+
 - name: Create the SunCavanaugh application
   containers.podman.podman_container:
     name: colors
@@ -16,6 +20,7 @@
         APP_COLOR: "{{ color }}"
   register: container
 
-- name: Print SunCavanaugh container information
-  ansible.builtin.debug:
-    var: container
+- name: Curl URL of SunCavanaugh application
+  ansible.builtin.uri:
+    url: "http://localhost:{{ host_port }}"
+    return_content: yes
