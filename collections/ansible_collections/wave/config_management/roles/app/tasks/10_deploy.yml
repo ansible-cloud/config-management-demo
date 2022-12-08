@@ -4,10 +4,6 @@
     name: colors
     state: absent
 
-- name: Pause for 5 seconds ensuring firewall settings in place
-  ansible.builtin.pause:
-    seconds: 5
-
 - name: Create the SunCavanaugh application
   containers.podman.podman_container:
     name: colors
