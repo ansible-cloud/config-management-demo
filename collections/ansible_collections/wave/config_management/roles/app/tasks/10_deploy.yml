@@ -1,4 +1,9 @@
 ---
+- name: remove container
+  containers.podman.podman_container:
+    name: colors
+    state: absent
+
 - name: Create the SunCavanaugh application
   containers.podman.podman_container:
     name: colors
