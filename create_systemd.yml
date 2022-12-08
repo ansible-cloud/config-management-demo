@@ -5,3 +5,7 @@
     - ansible.builtin.include_role:
         name: wave.config_management.remediation
         tasks_from: 10_systemd.yml
+    
+    - ansible.builtin.include_role:
+        name: wave.config_management.remediation
+        tasks_from: 15_setup_env.yml
