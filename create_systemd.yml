@@ -4,4 +4,4 @@
   tasks:
     - ansible.builtin.include_role:
         name: wave.config_management.remediation
-        tasks_from: 20_restore_web.yml
+        tasks_from: 10_systemd.yml
