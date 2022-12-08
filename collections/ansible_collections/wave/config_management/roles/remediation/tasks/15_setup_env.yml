@@ -1,0 +1,29 @@
+---
+- name: Install packages required for webserver and firewalld
+  ansible.builtin.package:
+    name:
+      - firewalld
+      - httpd
+    state: present
+  become: true
+
+- name: Enable and start firewalld service
+  ansible.builtin.service:
+    name: firewalld
+    state: started
+    enabled: yes
+  become: true
+
+- name: permit traffic in default zone for http service
+  ansible.posix.firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+
+- name: Configure firewalld ports for SunCavanaugh app
+  ansible.posix.firewalld:
+    port: "{{ host_port }}/tcp"
+    permanent: true
+    state: enabled
+    zone: "public"
+    immediate: true
