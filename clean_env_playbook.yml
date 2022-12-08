@@ -1,5 +1,5 @@
 ---
-- name: Playbook that installs and deploys SunCavanaugh app
+- name: Playbook that cleans and uninstalls SunCavanaugh app
   hosts: all
   collections:
     - containers.podman
