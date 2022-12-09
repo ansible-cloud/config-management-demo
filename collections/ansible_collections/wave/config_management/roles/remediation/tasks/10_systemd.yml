@@ -19,7 +19,7 @@
 
 - name: activate systemd units
   ansible.builtin.service:
-    name: "{{ path_name }}.service"
+    name: "{{ path_name }}.path"
     state: started
     enabled: yes
   become: true
