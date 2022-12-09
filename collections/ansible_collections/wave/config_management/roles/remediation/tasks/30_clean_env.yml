@@ -1,7 +1,7 @@
 - name: stop service
   ansible.builtin.service:
     name: "{{ path_name }}.path"
-    state: absent
+    state: stopped
   become: true
 
 - name: remove path
