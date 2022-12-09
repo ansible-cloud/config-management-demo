@@ -1,0 +1,17 @@
+- name: stop service
+  ansible.builtin.service:
+    name: "{{ path_name }}.path"
+    state: absent
+  become: true
+
+- name: remove path
+  ansible.builtin.file:
+    path: "/etc/systemd/system/{{ path_name }}.path
+    state: absent
+  become: true
+
+- name: remove service
+  ansible.builtin.file:
+    path: /etc/systemd/system/{{ service_name }}.service
+    state: absent
+  become: true

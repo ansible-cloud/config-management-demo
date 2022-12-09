@@ -8,3 +8,7 @@
     - ansible.builtin.include_role:
         name: wave.config_management.rhel
         tasks_from: 30_clean_env.yml
+
+    - ansible.builtin.include_role:
+        name: wave.config_management.remediation
+        tasks_from: 30_clean_env.yml
