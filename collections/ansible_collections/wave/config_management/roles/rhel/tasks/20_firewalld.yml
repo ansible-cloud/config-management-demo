@@ -6,7 +6,7 @@
     enabled: yes
   become: true
 
-- name: Configure firewalld ports for SunCavanaugh app
+- name: Configure firewalld ports for Globo Financial app
   ansible.posix.firewalld:
     port: "{{ host_port }}/tcp"
     permanent: true

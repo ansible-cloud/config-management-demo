@@ -2,4 +2,4 @@
 # defaults file for app
 host_port: 8080
 container_port: 8080
-color: "blue"
+color: "darkblue"

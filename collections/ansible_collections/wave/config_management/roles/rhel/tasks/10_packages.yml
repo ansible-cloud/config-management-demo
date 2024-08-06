@@ -1,5 +1,5 @@
 ---
-- name: Install packages required for SunCavanaugh
+- name: Install packages required for Globo Financial
   ansible.builtin.package:
     name:
       - podman

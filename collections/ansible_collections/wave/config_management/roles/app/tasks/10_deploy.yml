@@ -8,10 +8,10 @@
   ansible.builtin.pause:
     seconds: 5
 
-- name: Create the SunCavanaugh application
+- name: Create the Globo Financial application
   containers.podman.podman_container:
     name: colors
-    image: quay.io/acme_corp/eda-app:suncavanaugh
+    image: quay.io/acme_corp/globo-financial:latest
     state: started
     recreate: true
     ports:
@@ -20,7 +20,7 @@
         APP_COLOR: "{{ color }}"
   register: container
 
-- name: Curl URL of SunCavanaugh application
+- name: Curl URL of Globo Financial application
   ansible.builtin.uri:
     url: "http://localhost:{{ host_port }}"
     return_content: yes
