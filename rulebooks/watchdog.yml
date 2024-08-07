@@ -3,7 +3,7 @@
   hosts: all
   sources:
     - name: watchdog
-      ansible.eda.watchdog:
+      ansible.eda.file_watch:
         path: "/var/www/html/"
         recursive: true
         ignore_regexes: ['.*\.pytest.*', '.*__pycache__.*', '.*/.git.*']
