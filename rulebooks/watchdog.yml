@@ -2,15 +2,16 @@
 - name: Watch For Index HTML file change
   hosts: all
   sources:
-    - name: watchdog
+    - name: file_watch
       ansible.eda.file_watch:
-        path: "/var/www/html/"
-        recursive: true
+        path: "/var/www/html/index.html"
+        recursive: false 
         ignore_regexes: ['.*\.pytest.*', '.*__pycache__.*', '.*/.git.*']
   rules:
-    - name: Remediation Kickoff 
-      condition: event.type == "FileModifiedEvent"
+    - name: Remediation Kickoff
+      condition: event.type == "modified"
       action:
         run_job_template:
           name: "SC2 - Remediation"
           organization: "Globo Financial Service"
+
