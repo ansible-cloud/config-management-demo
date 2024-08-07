@@ -27,3 +27,18 @@
     state: enabled
     zone: "public"
     immediate: true
+
+- name: Check if the index.html file exists
+  ansible.builtin.stat:
+    path: "/var/www/html/index.html"
+  register: index_html_stat
+
+- name: Install Web application
+  ansible.builtin.template: 
+    src: "index.html.j2"
+    dest: "/var/www/html/index.html"
+    owner: "apache"
+    group: "apache"
+    mode: "0644"
+  when: not index_html_stat.stat.exists
+
