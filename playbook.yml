@@ -1,5 +1,5 @@
 ---
-- name: Playbook that installs and deploys SunCavanaugh app
+- name: Playbook that installs and deploys Globo Financial app
   hosts: all
   collections:
     - containers.podman
