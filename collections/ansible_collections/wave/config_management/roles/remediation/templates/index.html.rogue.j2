@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered GIF on Background</title>
+    <style>
+        /* Set the entire page to have a background image */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://raw.githubusercontent.com/rlopez133/demos/main/maigc-word-background.png'); /* Replace with your background image URL */
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: black;
+        }
+
+        /* Style for the GIF to ensure it remains centered */
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Optionally set a maximum width for the GIF */
+        .gif-container img {
+            width: auto;
+            height: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="https://raw.githubusercontent.com/rlopez133/demos/main/magic-word-transparent.gif" alt="Centered GIF"> <!-- Replace with your GIF URL -->
+    </div>
+</body>
+</html>
