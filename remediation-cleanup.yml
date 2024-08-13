@@ -1,0 +1,7 @@
+---
+- name: Playbook that cleans up systemd path and service
+  hosts: all
+  tasks:
+    - ansible.builtin.include_role:
+        name: wave.config_management.remediation
+        tasks_from: 30_clean_env.yml
