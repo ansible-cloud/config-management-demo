@@ -33,6 +33,11 @@
     path: "/var/www/html/index.html"
   register: index_html_stat
 
+- name: Check if the index.html.rogue file exists
+  ansible.builtin.stat:
+    path: "/var/www/html/index.html.rogue"
+  register: index_html_rogue_stat
+
 - name: Install Web application
   ansible.builtin.template: 
     src: "index.html.j2"
@@ -41,6 +46,15 @@
     group: "apache"
     mode: "0644"
   when: not index_html_stat.stat.exists
+
+- name: Provide rogue web application example
+  ansible.builtin.template: 
+    src: "index.html.rogue.j2"
+    dest: "/var/www/html/index.html.rogue"
+    owner: "apache"
+    group: "apache"
+    mode: "0644"
+  when: not index_html_rogue_stat.stat.exists
 
 - name: Enable and start httpd service
   ansible.builtin.service:
