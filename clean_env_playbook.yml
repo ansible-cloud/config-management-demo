@@ -1,5 +1,5 @@
 ---
-- name: Playbook that cleans and uninstalls SunCavanaugh app
+- name: Playbook that cleans and uninstalls Globo Financial app
   hosts: all
   collections:
     - containers.podman
