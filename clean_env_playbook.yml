@@ -9,7 +9,6 @@
     - ansible.builtin.include_role:
         name: wave.config_management.app
         tasks_from: 20_cleanapp.yml
-      delegate_to: wave-rhel01-sc02
         
     - ansible.builtin.include_role:
         name: wave.config_management.rhel
