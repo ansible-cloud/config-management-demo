@@ -1,5 +1,5 @@
 ---
-- name: remove container
+- name: stop container
   containers.podman.podman_container:
     name: colors
     state: stopped
@@ -11,4 +11,5 @@
     name: colors
     state: absent
     image: quay.io/acme_corp/globo-financial:latest
+    force_delete: true
   delegate_to: wave-rhel01-sc02
