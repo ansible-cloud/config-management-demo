@@ -2,4 +2,9 @@
 - name: remove container
   containers.podman.podman_container:
     name: colors
+    state: stopped
+
+- name: remove container
+  containers.podman.podman_container:
+    name: colors
     state: absent
