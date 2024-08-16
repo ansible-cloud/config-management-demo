@@ -6,7 +6,7 @@
     - ansible.posix
   tasks:
 
-      - ansible.builtin.include_role:
+    - ansible.builtin.include_role:
         name: wave.config_management.app
         tasks_from: 20_cleanapp.yml
         
