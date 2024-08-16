@@ -1,6 +1,6 @@
 ---
 - name: Find the container ID of the colors container
-  ansible.builtin.shell: 'podman ps -a --format "{{.ID}}" --filter "name=colors"'
+  ansible.builtin.shell: podman ps -a --format "{{'{{'}}.ID{{'}}'}}" --filter "name=colors"
   register: container_id
   ignore_errors: true
   delegate_to: wave-rhel01-sc02
