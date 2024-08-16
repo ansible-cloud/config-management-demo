@@ -1,5 +1,5 @@
 ---
-- name: Uniinstall packages required for Globo Financial
+- name: Uninstall packages required for Globo Financial
   ansible.builtin.package:
     name:
       - podman
