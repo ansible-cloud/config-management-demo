@@ -3,8 +3,10 @@
   containers.podman.podman_container:
     name: colors
     state: stopped
+  delegate_to: wave-rhel01-sc02
 
 - name: remove container
   containers.podman.podman_container:
     name: colors
     state: absent
+  delegate_to: wave-rhel01-sc02
